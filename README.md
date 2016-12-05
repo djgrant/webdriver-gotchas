@@ -19,6 +19,8 @@ Sometimes you need to wait before making an assertion or proceeding with the tes
 
 Prefer using a `wait` function over `pause()`. It's better to wait and proceed as soon as possible than to block the whole suite. 
 
+Even better, you can set an implicit timeout in web driver config that determines how long the driver will for an element to be retrievable on the page before timing out ([see spec](https://w3c.github.io/webdriver/webdriver-spec.html#dfn-session-implicit-wait-timeout)).
+
 Make sure you check that your wait functions work in remote browsers.
 
 **Do not make `should()` assertions inside `waitUntil()`** as it will cause the test to fail if the predicate does not immediately return true.
